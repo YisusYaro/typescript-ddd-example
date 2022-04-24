@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "typescript-ddd-example",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npx tsc && node dist/src/index.js",
+    "start:dev": "nodemon src/index.ts",
+    "start:prod": "node dist/src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jesus Alejandro Yahuitl Rodriguez",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.25",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
