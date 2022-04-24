@@ -13,6 +13,7 @@
     "resolveJsonModule": true,
     "noUnusedLocals": true,
     "outDir": "./dist",
+    "types": ["reflect-metadata"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
