@@ -9,7 +9,8 @@ services:
     volumes:
       - ./server/:/usr/src/app
     ports:
-      - '2567:2567'
+      - '3000:3000'
     stdin_open: true
     environment:
       - FRONTEND=http://127.0.0.1:5500
+      - STACK_ENV=test
