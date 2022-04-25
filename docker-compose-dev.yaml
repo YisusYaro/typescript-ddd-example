@@ -14,3 +14,4 @@ services:
     environment:
       - FRONTEND=http://127.0.0.1:5500
       - STACK_ENV=test
+      - STACK_NAME=resources
