@@ -1,6 +1,7 @@
 import { injectable } from 'inversify';
 import winston, { Logger as WinstonLoggerType } from 'winston';
 import { Logger } from '../../domain/logger';
+import { Event } from '../../domain/events/event';
 
 enum Levels {
   DEBUG = 'debug',
@@ -50,4 +51,9 @@ export class WinstonLogger implements Logger {
   info(message: string) {
     this.logger.info(message);
   }
+
+  event(event: Event) {
+    this.logger.info(`%O`, event);
+  }
 }
+
