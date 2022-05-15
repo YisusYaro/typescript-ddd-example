@@ -2,7 +2,7 @@ import { injectable, Container } from 'inversify';
 import { Command } from '../../application/command';
 import { CommandHandler } from '../../application/commands/command.handler';
 import { AppContainer } from '../dependency-injection/app-container';
-import { registerResourcesCommands } from '../../../resources/infraestructure/dependency-injection/register-commands';
+import { registerResourcesCommands } from '../../../resources/infrastructure/dependency-injection/register-commands';
 
 export interface CommandHandlersInformation {
   search(command: Command): CommandHandler<Command>;

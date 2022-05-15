@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import './app.controller';
-import { AppContainer } from './shared/infraestructure/dependency-injection/app-container';
+import { AppContainer } from './shared/infrastructure/dependency-injection/app-container';
 import { InversifyExpressServer } from 'inversify-express-utils';
 import { setConfigExpress } from './express.config';
 import { setErrorConfigExpress } from './express.config';

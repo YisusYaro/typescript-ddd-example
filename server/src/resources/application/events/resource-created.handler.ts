@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 import { Logger } from '../../../shared/domain/logger';
-import { TYPES as SHARED_TYPES } from '../../../shared/infraestructure/dependency-injection/types';
+import { TYPES as SHARED_TYPES } from '../../../shared/infrastructure/dependency-injection/types';
 import { ResourceCreatedEvent } from '../../domain/events/resource-created.event';
 import { ResourceCreatedHandler } from './resource-created.interface';
 

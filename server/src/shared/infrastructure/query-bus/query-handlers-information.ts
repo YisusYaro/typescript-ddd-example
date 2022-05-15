@@ -3,7 +3,7 @@ import { QueryHandler } from '../../application/queries/query.handler';
 import { AppContainer } from '../dependency-injection/app-container';
 import { Query } from '../../application/query';
 import { Result } from '../../application/result';
-import { registerResourcesQueries } from '../../../resources/infraestructure/dependency-injection/register-queries';
+import { registerResourcesQueries } from '../../../resources/infrastructure/dependency-injection/register-queries';
 
 export interface QueryHandlersInformation {
   search(query: Query): QueryHandler<Query, Result>;

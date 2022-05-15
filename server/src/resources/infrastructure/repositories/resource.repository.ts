@@ -1,5 +1,5 @@
 import { inject, injectable } from 'inversify';
-import { DynamoRepository } from '../../../shared/infraestructure/repositories/dynamo.repository';
+import { DynamoRepository } from '../../../shared/infrastructure/repositories/dynamo.repository';
 import { ResourceFactory } from '../../domain/factory';
 import { ResourceRepository } from '../../domain/repository';
 import { Resource, ResourceProperties } from '../../domain/resource';

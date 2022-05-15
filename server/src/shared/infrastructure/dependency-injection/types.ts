@@ -1,4 +1,4 @@
-const INFRAESTRUCTURE = {
+const INFRASTRUCTURE = {
   CommandBus: Symbol.for('CommandBus'),
   QueryBus: Symbol.for('QueryBus'),
   EventBus: Symbol.for('EventBus'),
@@ -10,5 +10,5 @@ const INFRAESTRUCTURE = {
 };
 
 export const TYPES = {
-  ...INFRAESTRUCTURE,
+  ...INFRASTRUCTURE,
 };

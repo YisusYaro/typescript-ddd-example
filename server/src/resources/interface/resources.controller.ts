@@ -7,9 +7,9 @@ import {
   requestParam,
   response
 } from 'inversify-express-utils';
-import { CommandBus } from '../../shared/infraestructure/command-bus/command-bus';
-import { TYPES as SHARED_TYPES } from '../../shared/infraestructure/dependency-injection/types';
-import { QueryBus } from '../../shared/infraestructure/query-bus/query-bus';
+import { CommandBus } from '../../shared/infrastructure/command-bus/command-bus';
+import { TYPES as SHARED_TYPES } from '../../shared/infrastructure/dependency-injection/types';
+import { QueryBus } from '../../shared/infrastructure/query-bus/query-bus';
 import { CreateResourceCommand } from '../application/commands/create-resource.command';
 import { GetResourceQuery } from '../application/queries/get-resource.query';
 

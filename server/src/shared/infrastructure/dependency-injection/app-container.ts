@@ -1,6 +1,6 @@
 import { Container } from 'inversify';
 import { setSharedModule } from './shared.module';
-import { setResourcesModule } from '../../../resources/infraestructure/dependency-injection/resources.module';
+import { setResourcesModule } from '../../../resources/infrastructure/dependency-injection/resources.module';
 
 export class AppContainer {
   private static instance: AppContainer;

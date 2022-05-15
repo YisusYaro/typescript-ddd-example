@@ -2,7 +2,7 @@ import { inject, injectable } from "inversify";
 import { NotFound } from "../../../shared/errors/not-found.error";
 import { ErrorMessage } from "../../domain/errors/error";
 import { ResourceRepository } from "../../domain/repository";
-import { TYPES } from "../../infraestructure/dependency-injection/types";
+import { TYPES } from "../../infrastructure/dependency-injection/types";
 import { GetResourceHandler } from "./get-resource.interface";
 import { GetResourceQuery } from "./get-resource.query";
 import { GetResourceResult } from "./get-resource.result";

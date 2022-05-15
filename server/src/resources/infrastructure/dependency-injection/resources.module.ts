@@ -38,7 +38,7 @@ const setApplication = (container: Container): void => {
   setEventHandlers(container);
 };
 
-const setInfraestructure = (container: Container): void => {
+const setInfrastructure = (container: Container): void => {
   container.bind<ResourceRepository>(TYPES.ResourceRepository).to(ResourceRepositoryImpl);
 };
 
@@ -46,5 +46,5 @@ const setInfraestructure = (container: Container): void => {
 export const setResourcesModule = (container: Container): void => {
   setDomain(container);
   setApplication(container);
-  setInfraestructure(container);
+  setInfrastructure(container);
 };

@@ -1,8 +1,8 @@
 import { Container, injectable } from 'inversify';
 import { EventHandler } from '../../domain/events/event.handler';
 import { AppContainer } from '../dependency-injection/app-container';
-import { Event } from './../../domain/events/event';
-import { registerResourcesEvents } from '../../../resources/infraestructure/dependency-injection/register-events';
+import { Event } from '../../domain/events/event';
+import { registerResourcesEvents } from '../../../resources/infrastructure/dependency-injection/register-events';
 
 export interface EventHandlersInformation {
   search(event: Event): EventHandler<Event>;

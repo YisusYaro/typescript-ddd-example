@@ -3,7 +3,7 @@ import { CreateResourceHandler } from './create-resource.interface';
 import { ResourceRepository } from '../../domain/repository';
 import { CreateResourceCommand } from './create-resource.command';
 import { ResourceFactory } from '../../domain/factory';
-import { TYPES } from '../../infraestructure/dependency-injection/types';
+import { TYPES } from '../../infrastructure/dependency-injection/types';
 
 @injectable()
 export class CreateResourceHandlerImpl implements CreateResourceHandler {

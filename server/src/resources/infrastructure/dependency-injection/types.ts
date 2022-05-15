@@ -20,12 +20,12 @@ const APPLICATION = {
   ...EVENT_HANDLERS,
 };
 
-const INFRAESTRUCTURE = {
+const INFRASTRUCTURE = {
   ResourceRepository: Symbol.for('ResourceRepository'),
 };
 
 export const TYPES = {
   ...DOMAIN,
   ...APPLICATION,
-  ...INFRAESTRUCTURE,
+  ...INFRASTRUCTURE,
 };

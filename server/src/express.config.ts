@@ -7,8 +7,8 @@ import { BadRequest } from './shared/errors/bad-request.error';
 import { Forbidden } from './shared/errors/forbidden.error';
 import { NotFound } from './shared/errors/not-found.error';
 import { Unauthorized } from './shared/errors/unauthorized.error';
-import { AppContainer } from './shared/infraestructure/dependency-injection/app-container';
-import { TYPES } from './shared/infraestructure/dependency-injection/types';
+import { AppContainer } from './shared/infrastructure/dependency-injection/app-container';
+import { TYPES } from './shared/infrastructure/dependency-injection/types';
 import { ulid } from 'ulid';
 
 export const setConfigExpress = (app: express.Application) => {

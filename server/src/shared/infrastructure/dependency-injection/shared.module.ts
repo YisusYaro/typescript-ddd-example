@@ -18,7 +18,7 @@ import {
 } from '../query-bus/query-handlers-information';
 import { TYPES } from './types';
 
-const setInfraestructure = (container: Container): void => {
+const setInfrastructure = (container: Container): void => {
   container.bind<CommandBus>(TYPES.CommandBus).to(CommandBusImpl);
 
   container.bind<QueryBus>(TYPES.QueryBus).to(QueryBusImpl);
@@ -44,5 +44,5 @@ const setInfraestructure = (container: Container): void => {
 };
 
 export function setSharedModule(container: Container): void {
-  setInfraestructure(container);
+  setInfrastructure(container);
 }
