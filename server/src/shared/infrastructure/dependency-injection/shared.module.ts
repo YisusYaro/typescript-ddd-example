@@ -6,10 +6,6 @@ import {
   CommandHandlersInformationImpl,
 } from '../command-bus/command-handlers-information';
 import { EventBus, EventBusImpl } from '../event-bus/event-bus';
-import {
-  EventHandlersInformation,
-  EventHandlersInformationImpl,
-} from '../event-bus/event-handlers-information';
 import { WinstonLogger } from '../logger/winston-logger';
 import { QueryBus, QueryBusImpl } from '../query-bus/query-bus';
 import {
@@ -33,11 +29,6 @@ const setInfrastructure = (container: Container): void => {
   container
     .bind<QueryHandlersInformation>(TYPES.QueryHandlersInformation)
     .to(QueryHandlersInformationImpl)
-    .inSingletonScope();
-
-  container
-    .bind<EventHandlersInformation>(TYPES.EventHandlersInformation)
-    .to(EventHandlersInformationImpl)
     .inSingletonScope();
 
   container.bind<Logger>(TYPES.Logger).to(WinstonLogger);
