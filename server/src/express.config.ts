@@ -7,7 +7,7 @@ import { BadRequest } from './shared/errors/bad-request.error';
 import { Forbidden } from './shared/errors/forbidden.error';
 import { NotFound } from './shared/errors/not-found.error';
 import { Unauthorized } from './shared/errors/unauthorized.error';
-import { AppContainer } from './shared/infrastructure/dependency-injection/app-container';
+import { App } from './shared/infrastructure/dependency-injection/app';
 import { TYPES } from './shared/infrastructure/dependency-injection/types';
 import { ulid } from 'ulid';
 
@@ -53,7 +53,7 @@ export const setErrorConfigExpress = (app: express.Application) => {
         res.status(404).json({ error: error.message });
       } else if (error instanceof Error) {
         const traceId = ulid();
-        AppContainer.getInstance()
+        App.getInstance()
           .getContainer()
           .get<Logger>(TYPES.Logger)
           .error(error, traceId);

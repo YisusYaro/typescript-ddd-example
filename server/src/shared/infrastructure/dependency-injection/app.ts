@@ -2,20 +2,20 @@ import { Container } from 'inversify';
 import { setSharedModule } from './shared.module';
 import { setResourcesModule } from '../../../resources/infrastructure/dependency-injection/resources.module';
 
-export class AppContainer {
-  private static instance: AppContainer;
+export class App {
+  private static instance: App;
   private container: Container;
 
   private constructor() {
     this.container = new Container();
   }
 
-  public static getInstance(): AppContainer {
-    if (!AppContainer.instance) {
-      AppContainer.instance = new AppContainer();
+  public static getInstance(): App {
+    if (!App.instance) {
+      App.instance = new App();
     }
 
-    return AppContainer.instance;
+    return App.instance;
   }
 
   public getContainer(): Container {
