@@ -24,7 +24,7 @@ export class CreateResourceHandlerImpl implements CreateResourceHandler {
 
     await this.resourceRepository.save(resource);
 
-    resource.commit();
+    await resource.commit();
 
     return;
   }
