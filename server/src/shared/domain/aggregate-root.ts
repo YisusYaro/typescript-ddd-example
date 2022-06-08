@@ -1,5 +1,5 @@
 import { Event } from './events/event';
-import { AppContainer } from '../infrastructure/dependency-injection/app-container';
+import { App } from '../infrastructure/dependency-injection/app';
 import { EventBus } from '../infrastructure/event-bus/event-bus';
 import { TYPES as SHARED_TYPES } from '../infrastructure/dependency-injection/types';
 
@@ -8,7 +8,7 @@ export abstract class AggregateRoot {
   protected events: Event[] = [];
 
   constructor() {
-    this.eventBus = AppContainer.getInstance()
+    this.eventBus = App.getInstance()
       .getContainer()
       .get<EventBus>(SHARED_TYPES.EventBus);
   }
@@ -20,7 +20,7 @@ export abstract class AggregateRoot {
   async commit() {
     await Promise.all(
       this.events.map(async (event) => {
-        await this.eventBus.execute(event);
+        await this.eventBus.publish(event);
       }),
     );
     this.events = [];
