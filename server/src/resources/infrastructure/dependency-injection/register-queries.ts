@@ -1,9 +1,9 @@
-import { Query } from '../../../shared/application/query';
+import { getQueryHandlersMap } from '../../../shared/infrastructure/dependency-injection/register-queries';
 import { GetResourceQuery } from '../../application/queries/get-resource.query';
 import { TYPES } from './types';
 
-export const registerResourcesQueries = (
-  queriesHandlersMap: Map<Query, symbol>
-): void => {
-  queriesHandlersMap.set(GetResourceQuery, TYPES.GetResourceHandler);
+export const registerResourcesQueries = (): void => {
+  const queryHandlersMap = getQueryHandlersMap();
+
+  queryHandlersMap.set(GetResourceQuery, TYPES.GetResourceHandler);
 };

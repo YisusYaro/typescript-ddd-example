@@ -1,17 +1,19 @@
 import { Container } from 'inversify';
 import { CreateResourceHandlerImpl } from '../../application/commands/create-resource.handler';
 import { CreateResourceHandler } from '../../application/commands/create-resource.interface';
-import { ResourceCreatedHandlerImpl } from '../../application/events/resource-created.handler';
-import { ResourceCreatedHandler } from '../../application/events/resource-created.interface';
 import { GetResourceHandler } from '../../application/queries/get-resource.interface';
 import { GetResourceHandlerImpl } from '../../application/queries/get-resource.handler';
 import { ResourceFactory, ResourceFactoryImpl } from '../../domain/factory';
 import { ResourceRepository } from '../../domain/repository';
 import { ResourceRepositoryImpl } from '../repositories/resource.repository';
 import { TYPES } from './types';
+import { registerResourcesCommands } from './register-commands';
+import { registerResourcesQueries } from './register-queries';
 
 const setDomain = (container: Container): void => {
-  container.bind<ResourceFactory>(TYPES.ResourceFactory).to(ResourceFactoryImpl);
+  container
+    .bind<ResourceFactory>(TYPES.ResourceFactory)
+    .to(ResourceFactoryImpl);
 };
 
 const setCommandsHandlers = (container: Container): void => {
@@ -22,26 +24,22 @@ const setCommandsHandlers = (container: Container): void => {
 
 const setQueryHandlers = (container: Container): void => {
   container
-  .bind<GetResourceHandler>(TYPES.GetResourceHandler)
-  .to(GetResourceHandlerImpl);
-};
-
-const setEventHandlers = (container: Container): void => {
-  container
-    .bind<ResourceCreatedHandler>(TYPES.ResourceCreatedHandler)
-    .to(ResourceCreatedHandlerImpl);
+    .bind<GetResourceHandler>(TYPES.GetResourceHandler)
+    .to(GetResourceHandlerImpl);
 };
 
 const setApplication = (container: Container): void => {
   setCommandsHandlers(container);
+  registerResourcesCommands();
   setQueryHandlers(container);
-  setEventHandlers(container);
+  registerResourcesQueries();
 };
 
 const setInfrastructure = (container: Container): void => {
-  container.bind<ResourceRepository>(TYPES.ResourceRepository).to(ResourceRepositoryImpl);
+  container
+    .bind<ResourceRepository>(TYPES.ResourceRepository)
+    .to(ResourceRepositoryImpl);
 };
-
 
 export const setResourcesModule = (container: Container): void => {
   setDomain(container);
