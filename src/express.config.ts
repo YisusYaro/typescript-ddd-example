@@ -1,6 +1,5 @@
 import cors from 'cors';
 import * as express from 'express';
-import { queryParser } from 'express-query-parser';
 import { Logger } from './shared/domain/logger';
 import { BadRequest } from './shared/errors/bad-request.error';
 import { Forbidden } from './shared/errors/forbidden.error';
@@ -17,14 +16,6 @@ export const setConfigExpress = (app: express.Application) => {
     }),
   );
   app.use(express.json());
-  app.use(
-    queryParser({
-      parseNull: true,
-      parseUndefined: true,
-      parseBoolean: true,
-      parseNumber: true,
-    }),
-  );
   app.use(
     cors({
       origin: '*',
