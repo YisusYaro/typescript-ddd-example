@@ -1,4 +1,4 @@
-import { Event } from '../domain/events/event';
+import { Event } from './events/event';
 
 export interface Logger {
   debug(message: string): void;
