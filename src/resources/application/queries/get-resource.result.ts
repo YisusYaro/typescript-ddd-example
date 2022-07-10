@@ -1,4 +1,4 @@
-import { Result } from "../../../shared/application/result";
+import { Result } from '../../../shared/application/result';
 
 export class GetResourceResult implements Result {
   constructor(properties: {

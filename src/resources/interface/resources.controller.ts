@@ -3,9 +3,11 @@ import { inject } from 'inversify';
 import {
   controller,
   httpGet,
-  httpPost, interfaces, request,
+  httpPost,
+  interfaces,
+  request,
   requestParam,
-  response
+  response,
 } from 'inversify-express-utils';
 import { CommandBus } from '../../shared/infrastructure/command-bus/command-bus';
 import { TYPES as SHARED_TYPES } from '../../shared/infrastructure/dependency-injection/types';
@@ -19,14 +21,14 @@ export class FooController implements interfaces.Controller {
     @inject(SHARED_TYPES.CommandBus)
     private commandBus: CommandBus,
     @inject(SHARED_TYPES.QueryBus)
-    private queryBus: QueryBus
+    private queryBus: QueryBus,
   ) {}
 
   @httpPost('/')
   async createResource(
     @requestParam('id') id: string,
     @request() req: express.Request,
-    @response() res: express.Response
+    @response() res: express.Response,
   ) {
     const command = new CreateResourceCommand({
       id,
@@ -40,7 +42,7 @@ export class FooController implements interfaces.Controller {
   async listResources(
     @requestParam('id') id: string,
     @request() req: express.Request,
-    @response() res: express.Response
+    @response() res: express.Response,
   ) {
     const query = new GetResourceQuery({
       id,

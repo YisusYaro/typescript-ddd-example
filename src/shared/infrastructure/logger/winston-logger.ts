@@ -56,4 +56,3 @@ export class WinstonLogger implements Logger {
     this.logger.info(`%O`, event);
   }
 }
-

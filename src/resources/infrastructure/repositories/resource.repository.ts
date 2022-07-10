@@ -1,9 +1,9 @@
-import { inject, injectable } from "inversify";
-import { DynamoRepository } from "../../../shared/infrastructure/repositories/dynamo.repository";
-import { ResourceFactory } from "../../domain/factory";
-import { ResourceRepository } from "../../domain/repository";
-import { Resource, ResourceProperties } from "../../domain/resource";
-import { TYPES } from "../dependency-injection/types";
+import { inject, injectable } from 'inversify';
+import { DynamoRepository } from '../../../shared/infrastructure/repositories/dynamo.repository';
+import { ResourceFactory } from '../../domain/factory';
+import { ResourceRepository } from '../../domain/repository';
+import { Resource, ResourceProperties } from '../../domain/resource';
+import { TYPES } from '../dependency-injection/types';
 
 @injectable()
 export class ResourceRepositoryImpl
@@ -57,7 +57,7 @@ export class ResourceRepositoryImpl
       | {
           [key: string]: any;
         }
-      | undefined
+      | undefined,
   ): Resource {
     const dataToReconstitute: any = {
       id: result?.id,
@@ -70,7 +70,7 @@ export class ResourceRepositoryImpl
     Object.keys(dataToReconstitute).forEach((key) =>
       dataToReconstitute[key] === undefined
         ? delete dataToReconstitute[key]
-        : {}
+        : {},
     );
 
     return this.resourceFactory.reconstitute(dataToReconstitute);

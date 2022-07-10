@@ -31,4 +31,3 @@ export class QueryHandlersInformationImpl implements QueryHandlersInformation {
     return queryHandler;
   }
 }
-

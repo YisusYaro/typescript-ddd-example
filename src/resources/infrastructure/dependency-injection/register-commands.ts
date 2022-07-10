@@ -3,7 +3,6 @@ import { CreateResourceCommand } from '../../application/commands/create-resourc
 import { TYPES } from './types';
 
 export const registerResourcesCommands = (): void => {
-
   const commandHandlersMap = getCommandHandlersMap();
 
   commandHandlersMap.set(CreateResourceCommand, TYPES.CreateResourceHandler);

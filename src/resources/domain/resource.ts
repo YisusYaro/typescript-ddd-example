@@ -1,5 +1,5 @@
-import { AggregateRoot } from "../../shared/domain/aggregate-root";
-import { ResourceCreatedEvent } from "./events/resource-created.event";
+import { AggregateRoot } from '../../shared/domain/aggregate-root';
+import { ResourceCreatedEvent } from './events/resource-created.event';
 
 export type ResourceEssentialProperties = Required<{
   readonly id: string;
@@ -24,12 +24,12 @@ export interface Resource {
 export class ResourceImplement extends AggregateRoot implements Resource {
   private readonly id: string;
   private name: string;
-  private status: string = "status";
+  private status = 'status';
   private readonly createdAt: string = new Date().toISOString();
   private updatedAt: string = new Date().toISOString();
 
   constructor(
-    properties: ResourceEssentialProperties & ResourceOptionalProperties
+    properties: ResourceEssentialProperties & ResourceOptionalProperties,
   ) {
     super();
     Object.assign(this, properties);
