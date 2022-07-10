@@ -5,7 +5,6 @@ Typescript example using driven domain design and cqrs.
 ## Dev enviroment using node 📦
 
 ```
-cd server
 npm i
 npm run start:dev
 ```
