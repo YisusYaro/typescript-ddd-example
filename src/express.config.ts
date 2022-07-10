@@ -1,6 +1,5 @@
 import cors from 'cors';
 import * as express from 'express';
-import fileUpload from 'express-fileupload';
 import { queryParser } from 'express-query-parser';
 import { Logger } from './shared/domain/logger';
 import { BadRequest } from './shared/errors/bad-request.error';
@@ -32,7 +31,6 @@ export const setConfigExpress = (app: express.Application) => {
       methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
     }),
   );
-  app.use(fileUpload());
 };
 
 export const setErrorConfigExpress = (app: express.Application) => {
