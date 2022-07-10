@@ -1,9 +1,9 @@
-import { inject, injectable } from 'inversify';
-import { DynamoRepository } from '../../../shared/infrastructure/repositories/dynamo.repository';
-import { ResourceFactory } from '../../domain/factory';
-import { ResourceRepository } from '../../domain/repository';
-import { Resource, ResourceProperties } from '../../domain/resource';
-import { TYPES } from '../dependency-injection/types';
+import { inject, injectable } from "inversify";
+import { DynamoRepository } from "../../../shared/infrastructure/repositories/dynamo.repository";
+import { ResourceFactory } from "../../domain/factory";
+import { ResourceRepository } from "../../domain/repository";
+import { Resource, ResourceProperties } from "../../domain/resource";
+import { TYPES } from "../dependency-injection/types";
 
 @injectable()
 export class ResourceRepositoryImpl
@@ -15,8 +15,7 @@ export class ResourceRepositoryImpl
 
   constructor() {
     super();
-    this.tableName =
-      `${process.env.STACK_ENV}-${process.env.STACK_NAME}-resources-table` || '';
+    this.tableName = `${process.env.STACK_ENV}-${process.env.STACK_NAME}-resources-table`;
   }
 
   async save(resource: Resource): Promise<void> {
@@ -27,11 +26,11 @@ export class ResourceRepositoryImpl
         id: properties.id,
         name: properties.name,
         status: properties.status,
-        createdAt: properties.createdAt.toString(),
-        updatedAt: properties.updatedAt.toString(),
+        createdAt: properties.createdAt,
+        updatedAt: properties.updatedAt,
       },
     };
-    
+
     await this.put(params);
     return;
   }
@@ -58,7 +57,7 @@ export class ResourceRepositoryImpl
       | {
           [key: string]: any;
         }
-      | undefined,
+      | undefined
   ): Resource {
     const dataToReconstitute: any = {
       id: result?.id,
@@ -71,7 +70,7 @@ export class ResourceRepositoryImpl
     Object.keys(dataToReconstitute).forEach((key) =>
       dataToReconstitute[key] === undefined
         ? delete dataToReconstitute[key]
-        : {},
+        : {}
     );
 
     return this.resourceFactory.reconstitute(dataToReconstitute);
