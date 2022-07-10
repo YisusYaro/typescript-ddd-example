@@ -25,11 +25,11 @@ docker exec -it server-container npm run start:dev
 
 ## Devs ✒️
 
-* **Jesús Alejandro Yahuitl Rodríguez** - *Dev* - [YisusYaro](https://github.com/YisusYaro/)
-
+- **Jesús Alejandro Yahuitl Rodríguez** - _Dev_ - [YisusYaro](https://github.com/YisusYaro/)
 
 ## License 📄
 
 This project is under the License described in the file [LICENSE](LICENSE)
 
 ---
+⌨️ with ❤️
