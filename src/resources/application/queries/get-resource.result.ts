@@ -1,25 +1,12 @@
-import { Result } from '../../../shared/application/result';
+import { Result } from "../../../shared/application/result";
 
 export class GetResourceResult implements Result {
-  readonly name: string;
-  readonly status: string;
-  readonly createdAt: Date;
-  readonly updatedAt: Date;
-
-  constructor({
-    name,
-    status,
-    createdAt,
-    updatedAt,
-  }: {
+  constructor(properties: {
     name: string;
     status: string;
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt: string;
+    updatedAt: string;
   }) {
-    this.name = name;
-    this.status = status;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
+    Object.assign(this, properties);
   }
 }
